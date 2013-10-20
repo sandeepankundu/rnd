@@ -19,6 +19,17 @@ replaced with ternary operator
 Echo '<br/>&lt;&lt;Database Test01 '. ( $dbselected==0 ? "NOT " : "") . ' selected';
 
 
+Echo '<br/>Some database operation';
+
+$sqlquery = 'select id, name, type, size, created, modified from my_files where name like \'%sandee%\'';
+//$sqlquery = 'select id, name, type, size, created, modified from my_files';
+echo "<BR/> SQL : $sqlquery <br/>";
+$resultresource = mysql_query($sqlquery, $mysqlconnection) or die('could not fetch from database');
+ECHO "<BR/> Result: $resultresource";
+
+
+//var_dump($resultresource);
+
 ECHO '<BR/>&gt;&gt;Now attempting to close database';
 mysql_close($mysqlconnection);
 Echo '<br/>&lt;&lt;Database connection closed';
