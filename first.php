@@ -77,4 +77,26 @@ $resultarray = compact( 'abc_fname', 'abc_lname', 'abc_zip' );
 var_dump( $resultarray);
 echo "<br/>";
 print_r( $resultarray);
+
+echo"<br/>======== array pointers in array to move forward/backward, etc, specifically for looping ===================";
+echo"<br/>current(),key(), next(), prev(),end(),reset()<BR/>";
+$arrayloop = array('zero','one','two','three', 'four');
+echo "<br/>";
+print_r( $arrayloop);
+
+echo '<br/> current($arrayloop)=> '. current($arrayloop), ', ';
+echo '<br/> key($arrayloop)=> '. key($arrayloop), ', ';
+echo '<br/> next($arrayloop)=> '. next($arrayloop), ', ';
+echo '<br/> key($arrayloop)=> '. key($arrayloop), ', ';
+echo '<br/> current($arrayloop)=> '. current($arrayloop), ', ';
+echo '<br/> end($arrayloop)=> '. end($arrayloop), ', ';
+echo '<br/> key($arrayloop)=> '. key($arrayloop), ', ';
+echo '<br/> current($arrayloop)=> '. current($arrayloop), ', ';
+echo '<br/> prev($arrayloop)=> '. prev($arrayloop), ', ';
+echo '<br/> key($arrayloop)=> '. key($arrayloop), ', ';
+echo '<br/> current($arrayloop)=> '. current($arrayloop), ', ';
+echo '<br/> reset($arrayloop)=> '. reset($arrayloop), ', ';
+echo '<br/> key($arrayloop)=> '. key($arrayloop), ', ';
+echo '<br/> current($arrayloop)=> '. current($arrayloop), ', ';
+
 ?>
