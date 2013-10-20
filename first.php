@@ -58,4 +58,12 @@ echo"<br/>======== All Keys IN ARRAY ===================<BR/>";
 print_r( array_keys(@$abc));
 echo"<br/>";
 var_dump( array_keys(@$abc));
+
+echo"<br/>======== EXTRACT => taken an array and assign its keys as variables with their values ===================<BR/>";
+$myarr = array( 'fname'=>"sandeepan",'lname'=>'kundu', 'age'=>33);
+var_dump( array_keys(@$abc));
+extract($myarr);
+echo "<br/>First Name: $fname <br/> Last Name: $lname <br/> Age : $age";
+echo '<br/>First Name: '.$fname.' <br/> Last Name: '.$lname.' <br/> Age :'. $age;
+
 ?>
