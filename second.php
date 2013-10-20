@@ -6,7 +6,7 @@ Echo '<br/>&lt;&lt;Connected to database';
 
 
 ECHO '<BR/>&gt;&gt;Select database - Test01';
-$dbselected = mysql_select_db('Test02',$mysqlconnection);
+$dbselected = mysql_select_db('Test01',$mysqlconnection);
 /*
 if($dbselected){
     Echo '<br/>&lt;&lt;Database Test01 selected';
@@ -16,10 +16,7 @@ else{
 }
 replaced with ternary operator
 */
-Echo '<br/>&lt;&lt;Database Test01 '. ( $dbselected==0 ? "NOT" : "") . ' selected';
-
-
-Echo '<br/>Some database operation';
+Echo '<br/>&lt;&lt;Database Test01 '. ( $dbselected==0 ? "NOT " : "") . ' selected';
 
 
 ECHO '<BR/>&gt;&gt;Now attempting to close database';
