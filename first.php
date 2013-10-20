@@ -55,15 +55,26 @@ $valuetosearch = "needle in a haystack";
 echo"<br/> searching '$valuetosearch' => result => ". array_search($valuetosearch , $abc) . " <br/>";
 
 echo"<br/>======== All Keys IN ARRAY ===================<BR/>";
-print_r( array_keys(@$abc));
+print_r( array_keys($abc));
 echo"<br/>";
-var_dump( array_keys(@$abc));
+var_dump( array_keys($abc));
 
-echo"<br/>======== EXTRACT => taken an array and assign its keys as variables with their values ===================<BR/>";
+echo"<br/>======== EXTRACT => takes an array and assign its keys as variables with their values ===================<BR/>";
 $myarr = array( 'fname'=>"sandeepan",'lname'=>'kundu', 'age'=>33);
-var_dump( array_keys(@$abc));
+var_dump( $abc);
 extract($myarr);
 echo "<br/>First Name: $fname <br/> Last Name: $lname <br/> Age : $age";
 echo '<br/>First Name: '.$fname.' <br/> Last Name: '.$lname.' <br/> Age :'. $age;
 
+
+echo"<br/>======== COMPACT => take variables and assigns their name and values into an array ===================<BR/>";
+$abc_fname ="victor";
+$abc_lname ="moussa";
+$abc_location ="quebec";
+$abc_zip = 54321;
+
+$resultarray = compact( 'abc_fname', 'abc_lname', 'abc_zip' );
+var_dump( $resultarray);
+echo "<br/>";
+print_r( $resultarray);
 ?>
