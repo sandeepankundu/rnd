@@ -25,7 +25,8 @@ if($rows == 1){
     $row = mysql_fetch_array($resultresource,MYSQL_ASSOC);
     extract($row);
     header('Content-type: '.$type);
-    header("Content-Disposition: inline; filename='$name'");
+    //header("Content-Disposition: inline; filename='$name'");
+    header("Content-Disposition: attachment; filename='$name'");
     echo($data);
 }
 else{
