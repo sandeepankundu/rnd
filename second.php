@@ -21,14 +21,30 @@ Echo '<br/>&lt;&lt;Database Test01 '. ( $dbselected==0 ? "NOT " : "") . ' select
 
 Echo '<br/>Some database operation';
 
-$sqlquery = 'select id, name, type, size, created, modified from my_files where name like \'%sandee%\'';
-//$sqlquery = 'select id, name, type, size, created, modified from my_files';
+//$sqlquery = 'select id, name, type, size, created, modified from my_files where name like \'%sandee%\'';
+$sqlquery = 'select id, name, type, size, created, modified from my_files';
 echo "<BR/> SQL : $sqlquery <br/>";
 $resultresource = mysql_query($sqlquery, $mysqlconnection) or die('could not fetch from database');
-ECHO "<BR/> Result: $resultresource";
+ECHO "<BR/> Result: $resultresource <br/>";
 
+//$resultarray = mysql_fetch_array($resultresource,MYSQL_BOTH);
+//var_dump($resultarray);
 
-//var_dump($resultresource);
+echo '<TABLE border="1">';
+while($row = mysql_fetch_array($resultresource,MYSQL_ASSOC)){
+    /*echo '<PRE>';
+    print_r($row);
+    echo '</PRE>';
+    echo '<BR/>';*/
+    /*extract($row, EXTR_PREFIX_ALL, "sql_data_");
+    echo " name : $sql_data_name";*/
+    extract($row);
+    /*echo " name : $name";*/
+    //echo "<TR> <TD>$sql_data_id</TD> <TD>$sql_data_name</TD> <TD>$sql_data_type</TD> <TD>$sql_data_size</TD> <TD>$sql_data_created</TD> <TD>$sql_data_modified</TD> </TR>";
+    echo "<TR> <TD>$id</TD> <TD>$name</TD> <TD>$type</TD> <TD>$size</TD> <TD>$created</TD> <TD>$modified</TD> </TR>";
+}
+echo '</TABLE>';
+
 
 ECHO '<BR/>&gt;&gt;Now attempting to close database';
 mysql_close($mysqlconnection);
