@@ -39,5 +39,9 @@ $abc = array_change_key_case($abc,1);
 var_dump($abc);
 echo"<BR/>";
 
+echo"=================================<BR/>";
+print_r($abc);
+echo"<BR/>";
+var_dump($abc);
 
 ?>
