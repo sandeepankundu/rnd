@@ -99,4 +99,15 @@ echo '<br/> reset($arrayloop)=> '. reset($arrayloop), ', ';
 echo '<br/> key($arrayloop)=> '. key($arrayloop), ', ';
 echo '<br/> current($arrayloop)=> '. current($arrayloop), ', ';
 
+echo"<br/>======== list function ===================";
+$arr1 = array('bob',35,'ceo','evolvic');
+echo"<br/> list(\$emp_name,\$emp_age,\$emp_designation) = \$arr1;";
+list($emp_name,$emp_age,$emp_designation) = $arr1;
+echo "<br/> Name: $emp_name, Age : $emp_age, Designation : $emp_designation";
+
+
+echo"<br/> list(\$emp_name,\$emp_age,\$emp_designation, \$emp_company) = \$arr1;";
+list($emp_name,$emp_age,$emp_designation, $emp_company) = $arr1;
+echo "<br/> Name: $emp_name, Age : $emp_age, Designation : $emp_designation, Company: $emp_company";
+
 ?>
