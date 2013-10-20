@@ -41,7 +41,9 @@ while($row = mysql_fetch_array($resultresource,MYSQL_ASSOC)){
     extract($row);
     /*echo " name : $name";*/
     //echo "<TR> <TD>$sql_data_id</TD> <TD>$sql_data_name</TD> <TD>$sql_data_type</TD> <TD>$sql_data_size</TD> <TD>$sql_data_created</TD> <TD>$sql_data_modified</TD> </TR>";
-    echo "<TR> <TD>$id</TD> <TD>$name</TD> <TD>$type</TD> <TD>$size</TD> <TD>$created</TD> <TD>$modified</TD> </TR>";
+    $urlarray = compact( 'id' );
+    $downloadURL = 'download.php?' . http_build_query($urlarray);
+    echo "<TR> <TD>$id</TD> <TD>$name</TD> <TD>$type</TD> <TD>$size</TD> <TD>$created</TD> <TD>$modified</TD>  <TD> <A href='$downloadURL'>Download</A></TD></TR>";
 }
 echo '</TABLE>';
 
