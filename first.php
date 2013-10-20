@@ -54,4 +54,8 @@ echo"<br/> searching '$valuetosearch' => result => ". array_search($valuetosearc
 $valuetosearch = "needle in a haystack";
 echo"<br/> searching '$valuetosearch' => result => ". array_search($valuetosearch , $abc) . " <br/>";
 
+echo"<br/>======== All Keys IN ARRAY ===================<BR/>";
+print_r( array_keys(@$abc));
+echo"<br/>";
+var_dump( array_keys(@$abc));
 ?>
