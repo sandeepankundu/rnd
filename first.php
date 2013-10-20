@@ -110,4 +110,17 @@ echo"<br/> list(\$emp_name,\$emp_age,\$emp_designation, \$emp_company) = \$arr1;
 list($emp_name,$emp_age,$emp_designation, $emp_company) = $arr1;
 echo "<br/> Name: $emp_name, Age : $emp_age, Designation : $emp_designation, Company: $emp_company";
 
+echo"<br/>======== http_build_query function ===================";
+$arr1 = array('bob',35,'ceo','evolvic');
+echo "<br/>".http_build_query($arr1, '__');
+echo "<br/>".http_build_query($arr1, '_','/');
+
+$abc_fname ="victor";
+$abc_lname ="moussa";
+$abc_location ="quebec";
+$abc_zip = 54321;
+
+$resultarray = compact( 'abc_fname', 'abc_lname', 'abc_zip' );
+
+echo "<br/>".http_build_query($resultarray,'_','_&');
 ?>
