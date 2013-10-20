@@ -44,4 +44,14 @@ print_r($abc);
 echo"<BR/>";
 var_dump($abc);
 
+
+echo"<br/>======== SEARCHING IN ARRAY ===================<BR/>";
+$valuetosearch = "needle";
+$abc["newkey"] = "needle in a haystack";
+
+print_r($abc);
+echo"<br/> searching '$valuetosearch' => result => ". array_search($valuetosearch , $abc);
+$valuetosearch = "needle in a haystack";
+echo"<br/> searching '$valuetosearch' => result => ". array_search($valuetosearch , $abc) . " <br/>";
+
 ?>
